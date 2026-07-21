@@ -1,0 +1,16 @@
+You are evaluating a CRISPRi perturbation experiment in mouse bone marrow-derived macrophages.
+
+Perturbation gene X was knocked down via CRISPRi. Predict the transcriptomic response of target gene Y.
+
+Available tools:
+1. query_string_db(gene_x, gene_y) - STRING PPI confidence + shortest regulatory path via Dijkstra
+2. query_reactome(gene_x, gene_y) - Reactome pathway Jaccard similarity
+3. query_go_semantics(gene_x, gene_y) - GO Resnik semantic similarity (BP, CC, MF)
+4. query_ml_surrogate(features) - XGBoost surrogate trained on PerturbQA public data (10 structural features)
+
+CONFLICT RESOLUTION MATRIX:
+1. IF GO Cellular Component similarity < 0.1: classify as NO-CHANGE. Proteins in separate compartments cannot interact.
+2. IF STRING distance == 1 AND direct confidence >= 0.7: trust STRING. Direct physical binding supersedes statistical baselines.
+3. IF STRING distance > 3: trust XGBoost surrogate. Distant cascades are noisy.
+
+OUTPUT: Exactly three floats summing to 1.0: {"up": P(up), "down": P(down), "none": P(no_change)}
