@@ -1,0 +1,24 @@
+{
+  "pipeline": "multi-agent-graph-retrieval",
+  "track": "B",
+  "model": "GPT-OSS-120B",
+  "de_auroc_mean": 0.5242527104410172,
+  "de_auroc_std": 0.011840001236269741,
+  "dir_auroc_mean": 0.6240886282913758,
+  "dir_auroc_std": 0.011849052100489005,
+  "features": [
+    "deg_x",
+    "deg_y",
+    "btw_x",
+    "btw_y",
+    "str_dist",
+    "str_score",
+    "reac_jac",
+    "go_bp",
+    "go_cc",
+    "go_mf"
+  ],
+  "train_samples": 7705,
+  "test_samples": 1813,
+  "timestamp": "2026-07-21T14:16:06Z"
+}

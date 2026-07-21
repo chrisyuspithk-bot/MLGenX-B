@@ -1,0 +1,6 @@
+*.pkl
+*.gaf.gz
+*.obo
+data/competition/
+__pycache__/
+.agent_tmp/
