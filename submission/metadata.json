@@ -1,10 +1,7 @@
 {
-  "version": "v7-rich-annotations",
-  "n_features": 30,
-  "de_auroc_mean": 0.5475079216210276,
-  "de_auroc_std": 0.013357647767781188,
-  "dir_auroc_mean": 0.8050236159152231,
-  "dir_auroc_std": 0.029241733153608503,
-  "combined": 0.6762657687681253,
-  "timestamp": "2026-07-21T15:03:46Z"
+  "version": "v11-knn-correct",
+  "n_features": 23,
+  "de_auroc_mean": 0.5393694514685767,
+  "dir_auroc_mean": 0.8030458162174179,
+  "combined": 0.6712076338429973
 }
